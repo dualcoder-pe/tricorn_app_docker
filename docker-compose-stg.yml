@@ -18,7 +18,7 @@ services:
       - tricorn_network
 
   tricorn_app_server:
-    container_name: api
+    container_name: tricorn_app_server
     image: tricorn/tricorn_app_server
     ports:
       - '8888:8888'
