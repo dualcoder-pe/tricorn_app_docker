@@ -2,9 +2,9 @@ networks:
   tricorn_network:
 
 services:
-  tricorn_app:
+  tricorn_app_server:
     container_name: api
-    image: tricorn/tricorn_app
+    image: tricorn/tricorn_app_server
     ports:
       - '8888:8888'
     volumes:
