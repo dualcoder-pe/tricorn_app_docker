@@ -12,7 +12,7 @@ services:
       - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/conf:/etc/nginx
       - ./nginx/cert:/etc/cert
-    container_name: nginx_server
+    container_name: tricorn_app_nginx_server
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     networks:
       - tricorn_network
