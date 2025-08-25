@@ -1,0 +1,19 @@
+networks:
+  tricorn_network:
+
+services:
+  tricorn_app:
+    container_name: api
+    image: tricorn/tricorn_app
+    ports:
+      - '8888:8888'
+    volumes:
+      - ./logs:/logs
+    environment:
+      MONGO_URL: ${MONGO_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      LOGSTASH_DEST: ${LOGSTASH_DEST}
+      TZ: "Asia/Seoul"
+    command: [ 'uvicorn', 'main:app', '--host', '0.0.0.0', '--port', '8888' ]
+    networks:
+      - tricorn_network
