@@ -21,14 +21,24 @@ services:
     container_name: tricorn_app_server
     image: tricorn/tricorn_app_server
     ports:
-      - '8888:8888'
+      - ${PORT}:${PORT}
     volumes:
       - ./logs:/logs
     environment:
       MONGO_URL: ${MONGO_URL}
-      JWT_SECRET: ${JWT_SECRET}
-      LOGSTASH_DEST: ${LOGSTASH_DEST}
+      LOGSTASH_URL: ${LOGSTASH_URL}
+      LOGSTASH_DEBUG: ${LOGSTASH_DEBUG}
+      PYTHONPATH: ${PYTHONPATH}
+      DB_URL: ${DB_URL}
+      FRED_API_KEY: ${FRED_API_KEY}
+      BINANCE_API_KEY: ${BINANCE_API_KEY}
+      BINANCE_SECRET: ${BINANCE_SECRET}
+      BYBIT_API_KEY: ${BYBIT_API_KEY}
+      BYBIT_SECRET: ${BYBIT_SECRET}
+      OKX_API_KEY: ${OKX_API_KEY}
+      OKX_SECRET: ${OKX_SECRET}
+      OKX_API_PASSPHRASE: ${OKX_API_PASSPHRASE}
       TZ: "Asia/Seoul"
-    command: [ 'uvicorn', 'main:app', '--host', '0.0.0.0', '--port', '8888' ]
+    command: [ 'uvicorn', 'main:app', '--host', '0.0.0.0', '--port', '${PORT}' ]
     networks:
       - tricorn_network
