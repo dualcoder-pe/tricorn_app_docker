@@ -19,7 +19,7 @@ services:
 
   tricorn_app_server:
     container_name: tricorn_app_server
-    image: tricorn/tricorn_app_server
+    image: tricorn/tricorn_app_server:latest
     ports:
       - ${PORT}:${PORT}
     volumes:
