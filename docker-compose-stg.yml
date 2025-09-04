@@ -1,5 +1,6 @@
 networks:
   tricorn_network:
+    external: true
 
 services:
   # nginx:
