@@ -40,6 +40,7 @@ services:
       OKX_API_KEY: ${OKX_API_KEY}
       OKX_SECRET: ${OKX_SECRET}
       OKX_API_PASSPHRASE: ${OKX_API_PASSPHRASE}
+      BUCKET_NAME: ${BUCKET_NAME}
       TZ: "Asia/Seoul"
     command: [ 'uvicorn', 'main:app', '--host', '0.0.0.0', '--port', '${PORT}' ]
     networks:
