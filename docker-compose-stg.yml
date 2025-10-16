@@ -25,6 +25,7 @@ services:
       - ${PORT}:${PORT}
     volumes:
       - ./logs:/logs
+      - ./.oci:/.oci:ro
     environment:
       MONGO_URL: ${MONGO_URL}
       LOGSTASH_URL: ${LOGSTASH_URL}
